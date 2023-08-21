@@ -12,12 +12,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       type: 'mysql',
       host: 'aws.connect.psdb.cloud',
       port: 3306,
-      username: 'cmifazflxbvdobt3scpy',
-      password: 'pscale_pw_11NyNHKQvcrYtu5i436TUB6aglxae91OHTP6Tk3duUr',
+      username: 'yc4kx9kwienblrtf1uub',
+      password: 'pscale_pw_ljidCrZBKghLQPadzOmeGKPaItwgj4VZhaxrWTZ2V0O',
       database: 'biblioteca',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
-      ssl:{"rejectUnauthorized":true}
+      //ssl:{"rejectUnauthorized":true}
     }), 
     UsersModule, 
     BooksModule,
