@@ -5,10 +5,14 @@ import { Repository } from 'typeorm';
 import { RegisterAuthDto } from './dto/register-auth.dto';
 import { hash, compare } from 'bcrypt';
 import { LoginAuthDto } from './dto/login-auth.dto';
+import { JwtService } from '@nestjs/jwt'
 
 @Injectable()
 export class AuthService {
-  constructor(@InjectRepository(User) private userRepository: Repository<User>) {}
+  constructor(
+    @InjectRepository(User) private userRepository: Repository<User>,
+    private jwtAuthService:JwtService
+  ) {}
 
   async register(userObject: RegisterAuthDto) {
     const { password } = userObject;
@@ -27,7 +31,13 @@ async login(userObjectLogin: LoginAuthDto) {
   const checkPassword = await compare(password, findUser.password);
   if(!checkPassword) throw new HttpException('PASSWORD_INCORRECT', 403);
 
-  const data = findUser;
+  const payload = {id:findUser.id, username:findUser.username}
+  const token = await this.jwtAuthService.sign(payload)
+
+  const data = {
+    user: findUser,
+    token: token,
+  };
 
   return data;
 
