@@ -15,14 +15,16 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: 'yc4kx9kwienblrtf1uub',
       password: 'pscale_pw_ljidCrZBKghLQPadzOmeGKPaItwgj4VZhaxrWTZ2V0O',
       database: 'biblioteca',
+      ssl: {
+        ca: process.env.SSL_CERT
+      },
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
-      ssl: true,
-      extra: {
+      /*extra: {
         ssl: {
           rejectUnauthorized: false
         }
-      }
+      }*/
     }), 
     UsersModule, 
     BooksModule,
