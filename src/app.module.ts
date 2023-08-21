@@ -16,7 +16,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       password: 'pscale_pw_ljidCrZBKghLQPadzOmeGKPaItwgj4VZhaxrWTZ2V0O',
       database: 'biblioteca',
       ssl: {
-        ca: process.env.SSL_CERT
+        //ca: process.env.SSL_CERT
+        rejectUnauthorized: false
       },
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
