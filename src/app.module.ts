@@ -10,13 +10,13 @@ import { TypeOrmModule } from '@nestjs/typeorm';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
+      host: 'aws.connect.psdb.cloud',
       port: 3306,
-      username: 'root',
-      password: 'password',
+      username: 'cmifazflxbvdobt3scpy',
+      password: 'pscale_pw_11NyNHKQvcrYtu5i436TUB6aglxae91OHTP6Tk3duUr',
       database: 'biblioteca',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: true
+      synchronize: true,
     }), 
     UsersModule, 
     BooksModule,
