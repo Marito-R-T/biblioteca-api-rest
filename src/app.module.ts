@@ -12,8 +12,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       type: 'mysql',
       host: 'aws.connect.psdb.cloud',
       port: 3306,
-      username: 'dm307z11l7udbkpfrtpi',
-      password: 'pscale_pw_yWEo9oZamX4zGJYLqYawW8FkDze2HgZ5kgqrEBfqnZW',
+      username: 'cihz7abujkz97t2r1log',
+      password: 'pscale_pw_k2Arz4nppqIRiZPt0lZZoaoJCACkEuDSVhiVOpf58pD',
       database: 'biblioteca',
       ssl: {
         //ca: process.env.SSL_CERT
