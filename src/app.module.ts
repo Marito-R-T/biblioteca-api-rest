@@ -17,6 +17,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       database: 'biblioteca',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
+      ssl:{"rejectUnauthorized":true}
     }), 
     UsersModule, 
     BooksModule,
