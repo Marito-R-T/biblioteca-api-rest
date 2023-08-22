@@ -10,11 +10,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'aws.connect.psdb.cloud',
-      port: 3306,
-      username: 'cihz7abujkz97t2r1log',
-      password: 'pscale_pw_k2Arz4nppqIRiZPt0lZZoaoJCACkEuDSVhiVOpf58pD',
-      database: 'biblioteca',
+      host: 'containers-us-west-84.railway.app',
+      port: 7010,
+      username: 'root',
+      password: 'rbDdmLxb3rPw2HM4fs9o',
+      database: 'railway',
       ssl: {
         //ca: process.env.SSL_CERT
         rejectUnauthorized: true
