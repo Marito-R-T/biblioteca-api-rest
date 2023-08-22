@@ -15,10 +15,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: 'root',
       password: 'rbDdmLxb3rPw2HM4fs9o',
       database: 'railway',
-      ssl: {
+      /*ssl: {
         //ca: process.env.SSL_CERT
         rejectUnauthorized: true
-      },
+      },*/
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
       /*extra: {
