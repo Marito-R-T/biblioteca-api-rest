@@ -22,25 +22,25 @@ export class AuthService {
     return this.userRepository.save(newUser);
   }
 
-async login(userObjectLogin: LoginAuthDto) {
-  const {username, password} = userObjectLogin;
-  console.log(username)
-  const findUser = await this.userRepository.findOne({ where: { username: username } });
-  if(!findUser) throw new HttpException('Ususario no encontrado', 404);
+  async login(userObjectLogin: LoginAuthDto) {
+    const {username, password} = userObjectLogin;
+    console.log(username)
+    const findUser = await this.userRepository.findOne({ where: { username: username } });
+    if(!findUser) throw new HttpException('Ususario no encontrado', 404);
 
-  const checkPassword = await compare(password, findUser.password);
-  if(!checkPassword) throw new HttpException('PASSWORD_INCORRECT', 403);
+    const checkPassword = await compare(password, findUser.password);
+    if(!checkPassword) throw new HttpException('PASSWORD_INCORRECT', 403);
 
-  const payload = {id:findUser.id, username:findUser.username}
-  const token = await this.jwtAuthService.sign(payload)
+    const payload = {id:findUser.id, username:findUser.username}
+    const token = await this.jwtAuthService.sign(payload)
 
-  const data = {
-    user: findUser,
-    token: token,
-  };
+    const data = {
+      user: findUser,
+      token: token,
+    };
 
-  return data;
+    return data;
 
-}
+  }
 
 }
