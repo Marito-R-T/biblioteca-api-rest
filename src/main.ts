@@ -11,6 +11,7 @@ async function bootstrap() {
     .setDescription('Save, list and reserve books to users')
     .setVersion('1.0')
     .addServer('http://localhost:3000/api/v1')
+    .addServer('https://biblioteca-api-rest-production.up.railway.app/api/v1')
     .addTag('books')
     .addTag('users')
     .build();
